@@ -1,87 +1,53 @@
-# Welcome to React Router!
+# 🎓 Students Courses Management System – v2
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern full-stack web application for managing student courses, assignments, and instructor-student interactions.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🛠 Tech Stack
 
-## Features
+- **Frontend:** React, TypeScript, Vite, React Router v7, Tailwind CSS
+- **Backend:** PHP (as API), MySQL
+- **Communication:** REST API (JSON)
+- **Routing:** React Router v7 (BrowserRouter + Routes/Route)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## 📁 Project Structure
 
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
+```
+Students_courses_management-v2/
+├── client/                     # React frontend
+│   ├── src/
+│   │   ├── components/         # Shared UI components (Navbar, Footer, etc.)
+│   │   ├── pages/              # Route components (Courses, Login, etc.)
+│   │   ├── App.tsx             # Routes defined here using React Router v7
+│   │   └── main.tsx            # React entry point with BrowserRouter
+├── server/                     # PHP backend (API)
+│   ├── api/                    # PHP files handling API requests
+│   └── db.php                  # DB connection setup
 ```
 
-### Development
+## ⚙️ Setup Instructions
 
-Start the development server with HMR:
+### 1. Backend (PHP & MySQL)
+
+- Start Apache & MySQL using XAMPP or similar
+- Place the `server/` folder inside `htdocs/` or your web root
+- Create a MySQL database and update the credentials in `db.php`
+- Access your PHP endpoints at: `http://localhost/server/api/...`
+
+### 2. Frontend (React with React Router v7)
 
 ```bash
+cd client
+npm install
+npm install react-router-dom
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+React will run at `http://localhost:5173`
 
-## Building for Production
+## 📌 Features
 
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- Student & Instructor login
+- Course listing and registration
+- Assignment uploads and deadlines
+- Messaging between students and instructors
+- Material downloads
